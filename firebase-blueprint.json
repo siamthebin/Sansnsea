@@ -1,0 +1,150 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "A user of the application.",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "description": "The unique identifier for the user."
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "The user's email address."
+        },
+        "role": {
+          "type": "string",
+          "enum": ["admin", "user"],
+          "description": "The user's role."
+        },
+        "displayName": {
+          "type": "string",
+          "description": "The user's display name."
+        },
+        "photoURL": {
+          "type": "string",
+          "description": "The user's profile photo URL."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The time the user was created."
+        }
+      },
+      "required": ["uid", "email", "role", "createdAt"]
+    },
+    "Tour": {
+      "title": "Tour",
+      "description": "A tour package.",
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "The title of the tour."
+        },
+        "description": {
+          "type": "string",
+          "description": "A detailed description of the tour."
+        },
+        "destinationType": {
+          "type": "string",
+          "enum": ["domestic", "international"],
+          "description": "Whether the tour is inside or outside the country."
+        },
+        "location": {
+          "type": "string",
+          "description": "The specific location of the tour."
+        },
+        "price": {
+          "type": "number",
+          "description": "The price per person."
+        },
+        "startDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The start date of the tour."
+        },
+        "endDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The end date of the tour."
+        },
+        "imageUrl": {
+          "type": "string",
+          "description": "A URL to an image representing the tour."
+        },
+        "authorUid": {
+          "type": "string",
+          "description": "The UID of the admin who created the tour."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The time the tour was created."
+        },
+        "status": {
+          "type": "string",
+          "enum": ["active", "draft", "archived"],
+          "description": "The status of the tour."
+        }
+      },
+      "required": ["title", "description", "destinationType", "location", "price", "startDate", "endDate", "imageUrl", "authorUid", "createdAt", "status"]
+    },
+    "Booking": {
+      "title": "Booking",
+      "description": "A booking made by a user for a tour.",
+      "type": "object",
+      "properties": {
+        "tourId": {
+          "type": "string",
+          "description": "The ID of the booked tour."
+        },
+        "userId": {
+          "type": "string",
+          "description": "The UID of the user who made the booking."
+        },
+        "status": {
+          "type": "string",
+          "enum": ["pending", "confirmed", "cancelled"],
+          "description": "The status of the booking."
+        },
+        "numberOfPeople": {
+          "type": "number",
+          "description": "The number of people booked for the tour."
+        },
+        "totalPrice": {
+          "type": "number",
+          "description": "The total price of the booking."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The time the booking was created."
+        }
+      },
+      "required": ["tourId", "userId", "status", "numberOfPeople", "totalPrice", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": {
+        "$ref": "#/entities/User"
+      },
+      "description": "Stores user profiles and roles."
+    },
+    "/tours/{tourId}": {
+      "schema": {
+        "$ref": "#/entities/Tour"
+      },
+      "description": "Stores tour packages."
+    },
+    "/bookings/{bookingId}": {
+      "schema": {
+        "$ref": "#/entities/Booking"
+      },
+      "description": "Stores bookings made by users."
+    }
+  }
+}

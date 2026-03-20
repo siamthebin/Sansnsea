@@ -1,0 +1,5 @@
+{
+  "name": "Sansnsea",
+  "description": "A tour booking app where users can book domestic and international tours, and admins can manage tour plans.",
+  "requestFramePermissions": []
+}
