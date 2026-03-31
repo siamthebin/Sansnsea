@@ -19,14 +19,14 @@ export default defineConfig(({mode}) => {
           theme_color: '#ffffff',
           icons: [
             {
-              src: 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png',
+              src: 'https://i.postimg.cc/jStdjPgV/IMG-1038.jpg',
               sizes: '192x192',
-              type: 'image/png'
+              type: 'image/jpeg'
             },
             {
-              src: 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png',
+              src: 'https://i.postimg.cc/jStdjPgV/IMG-1038.jpg',
               sizes: '512x512',
-              type: 'image/png'
+              type: 'image/jpeg'
             }
           ]
         }
