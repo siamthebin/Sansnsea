@@ -19,12 +19,12 @@ export default defineConfig(({mode}) => {
           theme_color: '#ffffff',
           icons: [
             {
-              src: 'https://i.postimg.cc/jStdjPgV/IMG-1038.jpg',
+              src: 'https://i.postimg.cc/1XxqskKg/IMG-1079.jpg',
               sizes: '192x192',
               type: 'image/jpeg'
             },
             {
-              src: 'https://i.postimg.cc/jStdjPgV/IMG-1038.jpg',
+              src: 'https://i.postimg.cc/1XxqskKg/IMG-1079.jpg',
               sizes: '512x512',
               type: 'image/jpeg'
             }
